@@ -1,6 +1,6 @@
 package com.booleanuk.extension;
 
-import com.booleanuk.core.Task;
+import com.booleanuk.extension.Task;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -8,10 +8,10 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class TodoList {
-    public ArrayList<com.booleanuk.core.Task> taskList = new ArrayList<>();
+    public ArrayList<Task> taskList = new ArrayList<>();
     private Integer taskFilter = 0;
 
-    public boolean addTask(com.booleanuk.core.Task task) {
+    public boolean addTask(Task task) {
         /*
         try - catch blocks are hardly necessary, but I wanted to experiment with different solutions.
          */
@@ -27,10 +27,20 @@ public class TodoList {
     }
 
 
+    public Task searchTask(Integer id){
+        for (Task t : this.taskList) {
+            if (Objects.equals(t.getID(), id)){
+                return t;
+            }
+        }
+        return null;
+    }
+
+
     public void viewTasks(){
         switch(this.taskFilter){
             case 0: {
-                for (com.booleanuk.core.Task t : this.taskList) {
+                for (com.booleanuk.extension.Task t : this.taskList) {
                     String taskName = t.getTaskName();
                     System.out.println(taskName);
                 }
@@ -38,7 +48,7 @@ public class TodoList {
             }
 
             case 1: {
-                for (com.booleanuk.core.Task t : this.taskList) {
+                for (com.booleanuk.extension.Task t : this.taskList) {
                     if (!t.getIsCompleted()) {
                         String taskName = t.getTaskName();
                         System.out.println(taskName);
@@ -48,7 +58,7 @@ public class TodoList {
             }
 
             case 2: {
-                for (com.booleanuk.core.Task t : this.taskList) {
+                for (com.booleanuk.extension.Task t : this.taskList) {
                     if (t.getIsCompleted()) {
                         String taskName = t.getTaskName();
                         System.out.println(taskName);
@@ -66,7 +76,7 @@ public class TodoList {
     }
 
     public String searchTask(String task){
-        for (com.booleanuk.core.Task t : this.taskList) {
+        for (com.booleanuk.extension.Task t : this.taskList) {
             if (Objects.equals(t.getTaskName(), task)){
                 return "Task was found in your list";
             }
@@ -76,7 +86,7 @@ public class TodoList {
 
 
     public String removeTask(String task){
-        for (com.booleanuk.core.Task t : this.taskList){
+        for (com.booleanuk.extension.Task t : this.taskList){
             if (Objects.equals(t.getTaskName(), task)){
                 this.taskList.remove(t);
                 return "Task removed";

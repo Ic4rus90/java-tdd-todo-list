@@ -1,7 +1,7 @@
 package com.booleanuk.extension;
 
-import com.booleanuk.core.Task;
-import com.booleanuk.core.TodoList;
+import com.booleanuk.extension.Task;
+import com.booleanuk.extension.TodoList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
