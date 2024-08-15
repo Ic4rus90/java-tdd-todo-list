@@ -65,7 +65,12 @@ public class TodoList {
 
 
     public String searchTask(String task){
-
+        for (Task t : taskList) {
+            if (Objects.equals(t.getTaskName(), task)){
+                return "Task was found in your list";
+            }
+        }
+        return "Task does not exist";
     }
 
     /*
