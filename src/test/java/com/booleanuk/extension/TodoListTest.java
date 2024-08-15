@@ -20,14 +20,8 @@ class TodoListTest {
         list.addTask(task_1);
         list.addTask(task_2);
 
-        String success = "Task was found in your list";
-        String fail = "Task does not exist";
+        Task exists = list.searchTask(1);
 
-        String exists = list.searchTask(1);
-        String doesNotExist = list.searchTask(4);
-
-        Assertions.assertEquals(success, exists);
-        Assertions.assertEquals(fail, doesNotExist);
+        Assertions.assertEquals(exists.getTaskName(), task_1.getTaskName());
     }
-
 }
