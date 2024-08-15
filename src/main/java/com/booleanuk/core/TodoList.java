@@ -62,8 +62,6 @@ public class TodoList {
         this.taskFilter = filterNumber;
     }
 
-
-
     public String searchTask(String task){
         for (Task t : taskList) {
             if (Objects.equals(t.getTaskName(), task)){
@@ -73,16 +71,13 @@ public class TodoList {
         return "Task does not exist";
     }
 
-    /*
+
     public String removeTask(String task){
 
     }
 
-    private void setFilter(Integer filterChoice){
-
-    }
-
-    private void setSorting(Integer sortingChoice){
+    /*
+    public void setSorting(Integer sortingChoice){
 
     }
  */
