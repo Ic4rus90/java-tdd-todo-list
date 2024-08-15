@@ -20,6 +20,6 @@ public class Task {
     }
 
     public void changeTaskStatus(){
-
+        this.isCompleted = !this.isCompleted;
     }
 }

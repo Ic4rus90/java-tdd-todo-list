@@ -1,10 +1,12 @@
 package com.booleanuk.core;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class TaskTest {
 
-    public void changeTaskStatusTest(){
+    @Test
+    public void setTaskStatusTest(){
         Task task = new Task("Finish coding assignment");
 
         // Assert that isCompleted is false by default
