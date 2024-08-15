@@ -141,7 +141,7 @@ class TodoListTest {
     }
 
     @Test
-    public void deleteTask(){
+    public void removeTaskTest(){
         TodoList list = new TodoList();
 
         String taskName = "Walk the dog";
@@ -154,13 +154,13 @@ class TodoListTest {
         String success = "Task was found in your list";
         String fail = "Task does not exist";
 
-        String exists = list.searchTask("Walk the dog");
+        String exists = list.searchTask(taskName);
 
         Assertions.assertEquals(success, exists);
 
-        String doesNotExist = list.searchTask("Walk the dog");
-
         list.removeTask(taskName);
+
+        String doesNotExist = list.searchTask(taskName);
 
         Assertions.assertEquals(fail, doesNotExist);
     }
