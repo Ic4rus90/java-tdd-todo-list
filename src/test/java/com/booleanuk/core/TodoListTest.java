@@ -31,6 +31,13 @@ class TodoListTest {
         System.setOut(new PrintStream(out));
 
         Assertions.assertTrue(out.toString().contains(taskName));
+
+        String taskName2 = "Go to the store";
+        Task task2 = new Task(taskName2);
+        list.addTask(task2);
+
+        Assertions.assertTrue(out.toString().contains(taskName));
+        Assertions.assertTrue(out.toString().contains(taskName2));
     }
 
 }
