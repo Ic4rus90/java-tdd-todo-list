@@ -11,6 +11,10 @@ public class Task {
         this.isCompleted = false;
     }
 
+    public String getTaskName() {
+        return this.taskName;
+    }
+
     public void changeTaskStatus(){
 
     }

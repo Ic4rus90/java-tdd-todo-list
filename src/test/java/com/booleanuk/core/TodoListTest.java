@@ -16,5 +16,11 @@ class TodoListTest {
         TodoList list = new TodoList();
         Task task = new Task("Walk the dog");
         Assertions.assertTrue(list.addTask(task));
+
+        int oldListSize = list.listSize();
+        Task task2 = new Task("Create a list");
+        list.addTask(task2);
+        int newListSize = list.listSize();
+        Assertions.assertEquals(newListSize, oldListSize + 1);
     }
 }

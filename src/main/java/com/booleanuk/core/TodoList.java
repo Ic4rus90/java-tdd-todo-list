@@ -3,13 +3,17 @@ package com.booleanuk.core;
 import java.util.ArrayList;
 
 public class TodoList {
-    private ArrayList<String> taskList = new ArrayList<>();
+    private ArrayList<Task> taskList = new ArrayList<>();
     private Integer taskFilter = 0;
     private Integer sorting = 0;
 
     public boolean addTask(Task task) {
-
     }
+
+    public int listSize(){
+        return taskList.size();
+    }
+
 
     public String viewTasks(){
 
