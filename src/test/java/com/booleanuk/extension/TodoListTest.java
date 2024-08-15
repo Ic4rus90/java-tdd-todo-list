@@ -41,4 +41,34 @@ class TodoListTest {
 
         Assertions.assertEquals(task_2.getTaskName(), list.taskList.getFirst().getTaskName());
     }
+
+    @Test
+    public void updateStatusTest(){
+        TodoList list = new TodoList();
+
+        Task task_1 = new Task("Pet the dog");
+
+        // Add tasks to list
+        list.addTask(task_1);
+
+        int id = 1;
+
+        for (Task t : list.taskList) {
+            if (t.getID() == id){
+                t.changeTaskStatus();
+            }
+        }
+
+        boolean isCompleted = false;
+
+        for (Task t : list.taskList) {
+            if (t.getID() == id){
+                isCompleted = t.getIsCompleted();
+            }
+        }
+
+        Assertions.assertTrue(isCompleted);
+    }
+
+
 }
