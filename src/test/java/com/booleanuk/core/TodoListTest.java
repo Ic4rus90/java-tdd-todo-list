@@ -46,5 +46,4 @@ class TodoListTest {
         Assertions.assertTrue(out2.toString().contains(taskName));
         Assertions.assertTrue(out2.toString().contains(taskName2));
     }
-
 }

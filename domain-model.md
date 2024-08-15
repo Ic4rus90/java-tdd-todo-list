@@ -31,9 +31,9 @@
 
 
 ### Methods
-| Methods                              | Scenario                                         | Outputs |
-|--------------------------------------|--------------------------------------------------|---------|
-| `Void changeTaskStatus(String task)` | User changes the status of the task.             | -       |
+| Methods                                            | Scenario                                         | Outputs |
+|----------------------------------------------------|--------------------------------------------------|---------|
+| `Void setTaskStatus(boolean completed/incomplete)` | User changes the status of the task.             | -       |
 
 ## TODO Class
 

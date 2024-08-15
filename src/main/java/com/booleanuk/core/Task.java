@@ -15,6 +15,10 @@ public class Task {
         return this.taskName;
     }
 
+    public boolean getIsCompleted() {
+        return isCompleted;
+    }
+
     public void changeTaskStatus(){
 
     }
