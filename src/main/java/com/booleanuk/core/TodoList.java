@@ -22,10 +22,11 @@ public class TodoList {
         return taskList.size();
     }
 
-/*
-    public String viewTasks(){
+
+    public void viewTasks(){
 
     }
+    /*
 
     public String searchTask(String task){
 
