@@ -24,4 +24,21 @@ class TodoListTest {
 
         Assertions.assertEquals(exists.getTaskName(), task_1.getTaskName());
     }
+
+    @Test
+    public void updateTaskTest(){
+        TodoList list = new TodoList();
+
+        Task task_1 = new Task("Pet the dog");
+        Task task_2 = new Task("Take out the garbage");
+
+        // Add tasks to list
+        list.addTask(task_1);
+
+        int id = 1;
+
+        list.updateTask(id, task_2.getTaskName());
+
+        Assertions.assertEquals(task_2.getTaskName(), list.taskList.getFirst().getTaskName());
+    }
 }
