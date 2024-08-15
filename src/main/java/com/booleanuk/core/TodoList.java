@@ -24,8 +24,13 @@ public class TodoList {
 
 
     public void viewTasks(){
-
+        for (Task t : taskList) {
+            String taskName = t.getTaskName();
+            System.out.println(taskName);
+        }
     }
+
+
     /*
 
     public String searchTask(String task){

@@ -30,14 +30,21 @@ class TodoListTest {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
 
+        list.viewTasks();
+
         Assertions.assertTrue(out.toString().contains(taskName));
 
         String taskName2 = "Go to the store";
         Task task2 = new Task(taskName2);
         list.addTask(task2);
 
-        Assertions.assertTrue(out.toString().contains(taskName));
-        Assertions.assertTrue(out.toString().contains(taskName2));
+        ByteArrayOutputStream out2 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out2));
+
+        list.viewTasks();
+
+        Assertions.assertTrue(out2.toString().contains(taskName));
+        Assertions.assertTrue(out2.toString().contains(taskName2));
     }
 
 }
