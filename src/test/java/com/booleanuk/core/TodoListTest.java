@@ -123,23 +123,20 @@ class TodoListTest {
     public void searchString(){
         TodoList list = new TodoList();
 
-        Task task_1 = new Task("Walk the dog");
-        Task task_2 = new Task("Run");
+        String taskName = "Walk the dog";
+
+        Task task_1 = new Task(taskName);
 
         // Add tasks to list
         list.addTask(task_1);
-        list.addTask(task_2);
 
-        String successString = "Task was found in your list";
-        String failString = "Task does not exist";
+        String success = "Task was found in your list";
+        String fail = "Task does not exist";
 
         String exists = list.searchTask("Walk the dog");
         String doesNotExist = list.searchTask("Vacuum the racoon");
 
-        String stringExists = list.searchTask(exists);
-        String stringDoesNotExist = list.searchTask(doesNotExist);
-
-        Assertions.assertEquals(successString, stringExists);
-        Assertions.assertEquals(failString, stringDoesNotExist);
+        Assertions.assertEquals(success, exists);
+        Assertions.assertEquals(fail, doesNotExist);
     }
 }
