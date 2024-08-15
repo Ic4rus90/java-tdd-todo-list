@@ -123,9 +123,6 @@ class TodoListTest {
     public void searchString(){
         TodoList list = new TodoList();
 
-        String exists = list.searchTask("Walk the dog");
-        String doesNotExist = list.searchTask("Vacuum the racoon");
-
         Task task_1 = new Task("Walk the dog");
         Task task_2 = new Task("Run");
 
@@ -135,6 +132,9 @@ class TodoListTest {
 
         String successString = "Task was found in your list";
         String failString = "Task does not exist";
+
+        String exists = list.searchTask("Walk the dog");
+        String doesNotExist = list.searchTask("Vacuum the racoon");
 
         String stringExists = list.searchTask(exists);
         String stringDoesNotExist = list.searchTask(doesNotExist);
