@@ -77,7 +77,9 @@ class TodoListTest {
 
         list.viewTasks();
 
-        Assertions.assertTrue(out.toString().contains(task_1.getTaskName()));
-        Assertions.assertTrue(out.toString().contains(task_4.getTaskName()));
+        Assertions.assertTrue(out.toString().contains(task_2.getTaskName()));
+        Assertions.assertTrue(out.toString().contains(task_3.getTaskName()));
+        Assertions.assertFalse(out.toString().contains(task_1.getTaskName()));
+        Assertions.assertFalse(out.toString().contains(task_4.getTaskName()));
     }
 }
