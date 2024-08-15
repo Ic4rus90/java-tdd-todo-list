@@ -45,6 +45,16 @@ public class TodoList {
         }
     }
 
+    public void updateStatus(Integer id) {
+        for (Task t : taskList) {
+            if (Objects.equals(t.getID(), id)){
+                t.changeTaskStatus();
+            }
+        }
+    }
+
+
+
 
     public void viewTasks(){
         switch(this.taskFilter){
