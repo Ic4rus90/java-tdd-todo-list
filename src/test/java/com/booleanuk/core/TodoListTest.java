@@ -90,7 +90,7 @@ class TodoListTest {
          */
         TodoList list = new TodoList();
 
-        list.setTaskFilter(2);
+        list.setTaskFilter(1);
 
         Task task_1 = new Task("Walk the dog");
         Task task_2 = new Task("Run");
