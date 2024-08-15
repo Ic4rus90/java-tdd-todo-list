@@ -154,14 +154,20 @@ class TodoListTest {
         String success = "Task was found in your list";
         String fail = "Task does not exist";
 
+        String removeSuccess = "Task removed";
+
         String exists = list.searchTask(taskName);
 
         Assertions.assertEquals(success, exists);
 
-        list.removeTask(taskName);
+        String taskRemoved = list.removeTask(taskName);
+
+        String taskDoesNotExist = list.removeTask(taskName);
 
         String doesNotExist = list.searchTask(taskName);
 
         Assertions.assertEquals(fail, doesNotExist);
+        Assertions.assertEquals(taskRemoved, removeSuccess);
+        Assertions.assertEquals(fail, taskDoesNotExist);
     }
 }
