@@ -13,6 +13,8 @@ class TodoListTest {
 
     @Test
     public void addTaskTest() {
-
+        TodoList list = new TodoList();
+        String task = "Walk the dog";
+        Assertions.assertTrue(list.addTask(task));
     }
 }

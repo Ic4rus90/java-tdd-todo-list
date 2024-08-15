@@ -48,7 +48,7 @@
 ### Methods
 | Methods                                  | Scenario                                                                                                               | Outputs                          |
 |------------------------------------------|------------------------------------------------------------------------------------------------------------------------|----------------------------------|
-| `Void addTask(String task)`              | User adds task to the Todo list.                                                                                       | -                                |
+| `Boolean addTask(String task)`           | User adds task to the Todo list.                                                                                       | Return true                      |
 | `String viewTasks()`                     | User does not have any tasks in the list.                                                                              | Return `Todo list is empty`.     |
 |                                          | User has tasks in the list.                                                                                            | Return todo list.                |
 | `String searchTask(String task)`         | User searches for existing task.                                                                                       | Return `Task found in your list` |

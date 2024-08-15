@@ -3,11 +3,11 @@ package com.booleanuk.core;
 import java.util.ArrayList;
 
 public class TodoList {
-    private ArrayList<Integer> taskList = new ArrayList<>();
+    private ArrayList<String> taskList = new ArrayList<>();
     private Integer taskFilter = 0;
     private Integer sorting = 0;
 
-    public void addTask() {
+    public boolean addTask(String task) {
 
     }
 
