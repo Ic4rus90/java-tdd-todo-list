@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.time.LocalDateTime;
 
 class TodoListTest {
     @Test
@@ -66,5 +67,24 @@ class TodoListTest {
         Assertions.assertTrue(isCompleted);
     }
 
+    @Test
+    public void getDateAndTimeTest(){
+        TodoList list = new TodoList();
 
+        Task task_1 = new Task("Pet the dog");
+
+        LocalDateTime localDateTimeNow = LocalDateTime.now();
+
+        // Add tasks to list
+        list.addTask(task_1);
+
+        LocalDateTime taskTime = list.getDateTime(1);
+
+        Assertions.assertEquals(localDateTimeNow.getSecond(), taskTime.getSecond());
+        Assertions.assertEquals(localDateTimeNow.getMinute(), taskTime.getMinute());
+        Assertions.assertEquals(localDateTimeNow.getHour(), taskTime.getHour());
+        Assertions.assertEquals(localDateTimeNow.getDayOfMonth(), taskTime.getDayOfMonth());
+        Assertions.assertEquals(localDateTimeNow.getMonth(), taskTime.getMonth());
+        Assertions.assertEquals(localDateTimeNow.getYear(), taskTime.getYear());
+    }
 }
