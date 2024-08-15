@@ -73,7 +73,13 @@ public class TodoList {
 
 
     public String removeTask(String task){
-
+        for (Task t : taskList){
+            if (Objects.equals(t.getTaskName(), task)){
+                taskList.remove(t);
+                return "Task removed";
+            }
+        }
+        return "Task does not exist";
     }
 
     /*
