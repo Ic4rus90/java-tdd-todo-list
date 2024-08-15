@@ -38,17 +38,17 @@
 ## TODO Class
 
 ### Variables
-| Variables                                    | Description                                                                                                                                |
-|----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| `List<String task> taskList`                 | Container containing the bagels the customer has added to basket.                                                                          | 
-| `Integer taskFilter`                         | Allows the user to set preferences regarding what tasks are shown. 0 for all tasks, 1 for incomplete tasks and 2 for completed tasks.      |
-| `Integer sorting`                            | Allows the user to set preferences regarding the sorting of the tasks. 0 for alphabetically ascending and 1 for alphabetically descending. |
+| Variables                  | Description                                                                                                                                |
+|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| `List<Task task> taskList` | List containing the tasks.                                                                                                                 | 
+| `Integer taskFilter`       | Allows the user to set preferences regarding what tasks are shown. 0 for all tasks, 1 for incomplete tasks and 2 for completed tasks.      |
+| `Integer sorting`          | Allows the user to set preferences regarding the sorting of the tasks. 0 for alphabetically ascending and 1 for alphabetically descending. |
 
 
 ### Methods
 | Methods                                  | Scenario                                                                                                               | Outputs                          |
 |------------------------------------------|------------------------------------------------------------------------------------------------------------------------|----------------------------------|
-| `Boolean addTask(String task)`           | User adds task to the Todo list.                                                                                       | Return true                      |
+| `Boolean addTask(Task task)`             | User adds task to the Todo list.                                                                                       | Return true                      |
 | `String viewTasks()`                     | User does not have any tasks in the list.                                                                              | Return `Todo list is empty`.     |
 |                                          | User has tasks in the list.                                                                                            | Return todo list.                |
 | `String searchTask(String task)`         | User searches for existing task.                                                                                       | Return `Task found in your list` |

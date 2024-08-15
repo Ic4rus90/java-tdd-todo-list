@@ -7,7 +7,7 @@ public class TodoList {
     private Integer taskFilter = 0;
     private Integer sorting = 0;
 
-    public boolean addTask(String task) {
+    public boolean addTask(Task task) {
 
     }
 

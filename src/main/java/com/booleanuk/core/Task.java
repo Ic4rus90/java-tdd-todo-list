@@ -6,7 +6,12 @@ public class Task {
     private String taskName;
     private Boolean isCompleted;
 
-    public void changeTaskStatus(String task){
+    public Task(String taskName){
+        this.taskName = taskName;
+        this.isCompleted = false;
+    }
+
+    public void changeTaskStatus(){
 
     }
 }
