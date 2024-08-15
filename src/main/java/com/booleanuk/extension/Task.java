@@ -20,6 +20,10 @@ public class Task {
         return this.taskName;
     }
 
+    public void setTaskName(String newTaskName){
+        this.taskName = newTaskName;
+    }
+
     public Integer getID() { return this.id; }
 
     public boolean getIsCompleted() {

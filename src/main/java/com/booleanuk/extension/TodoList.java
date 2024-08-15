@@ -22,6 +22,7 @@ public class TodoList {
             return false;
         }
     }
+
     public int listSize(){
         return this.taskList.size();
     }
@@ -34,6 +35,14 @@ public class TodoList {
             }
         }
         return null;
+    }
+
+    public void updateTask(Integer id, String newName) {
+        for (Task t : taskList){
+            if (Objects.equals(t.getID(), id)){
+                t.setTaskName(newName);
+            }
+        }
     }
 
 
