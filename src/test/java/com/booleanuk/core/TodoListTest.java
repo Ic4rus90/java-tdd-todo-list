@@ -120,7 +120,7 @@ class TodoListTest {
     }
 
     @Test
-    public void searchString(){
+    public void searchTaskTest(){
         TodoList list = new TodoList();
 
         String taskName = "Walk the dog";
@@ -137,6 +137,31 @@ class TodoListTest {
         String doesNotExist = list.searchTask("Vacuum the racoon");
 
         Assertions.assertEquals(success, exists);
+        Assertions.assertEquals(fail, doesNotExist);
+    }
+
+    @Test
+    public void deleteTask(){
+        TodoList list = new TodoList();
+
+        String taskName = "Walk the dog";
+
+        Task task_1 = new Task(taskName);
+
+        // Add tasks to list
+        list.addTask(task_1);
+
+        String success = "Task was found in your list";
+        String fail = "Task does not exist";
+
+        String exists = list.searchTask("Walk the dog");
+
+        Assertions.assertEquals(success, exists);
+
+        String doesNotExist = list.searchTask("Walk the dog");
+
+        list.removeTask(taskName);
+
         Assertions.assertEquals(fail, doesNotExist);
     }
 }
