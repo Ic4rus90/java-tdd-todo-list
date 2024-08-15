@@ -2,6 +2,7 @@ package com.booleanuk.extension;
 
 import com.booleanuk.extension.Task;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Objects;
@@ -53,8 +54,14 @@ public class TodoList {
         }
     }
 
-
-
+    public LocalDateTime getDateTime(int id){
+        for (Task t : taskList) {
+            if (Objects.equals(t.getID(), id)) {
+                return t.getDateTime();
+            }
+        }
+        return null;
+    }
 
     public void viewTasks(){
         switch(this.taskFilter){

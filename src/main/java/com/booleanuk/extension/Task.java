@@ -33,4 +33,7 @@ public class Task {
     public void changeTaskStatus(){
         this.isCompleted = !this.isCompleted;
     }
+
+    public LocalDateTime getDateTime() {return this.dateTime; }
+
 }
