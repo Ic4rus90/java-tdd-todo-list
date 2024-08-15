@@ -33,6 +33,16 @@ public class TodoList {
                 break;
             }
 
+            case 1: {
+                for (Task t : taskList) {
+                    if (!t.getIsCompleted()) {
+                        String taskName = t.getTaskName();
+                        System.out.println(taskName);
+                    }
+                }
+                break;
+            }
+
             case 2: {
                 for (Task t : taskList) {
                     if (t.getIsCompleted()) {
@@ -40,6 +50,7 @@ public class TodoList {
                         System.out.println(taskName);
                     }
                 }
+                break;
             }
 
         }
