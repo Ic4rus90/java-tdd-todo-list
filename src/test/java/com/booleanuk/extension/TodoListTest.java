@@ -53,11 +53,7 @@ class TodoListTest {
 
         int id = 1;
 
-        for (Task t : list.taskList) {
-            if (t.getID() == id){
-                t.changeTaskStatus();
-            }
-        }
+        list.updateStatus(id);
 
         boolean isCompleted = false;
 
