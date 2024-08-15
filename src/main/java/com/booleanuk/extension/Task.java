@@ -6,7 +6,7 @@ public class Task {
     private String taskName;
     private Boolean isCompleted;
     private int id;
-    private static int counter = 1;
+    public static int counter = 1;
     private LocalDateTime dateTime;
 
     public Task(String taskName){
@@ -35,5 +35,4 @@ public class Task {
     }
 
     public LocalDateTime getDateTime() {return this.dateTime; }
-
 }

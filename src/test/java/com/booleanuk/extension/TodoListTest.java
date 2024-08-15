@@ -3,6 +3,7 @@ package com.booleanuk.extension;
 import com.booleanuk.extension.Task;
 import com.booleanuk.extension.TodoList;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -12,6 +13,8 @@ import java.time.LocalDateTime;
 class TodoListTest {
     @Test
     public void searchTaskTest(){
+        Task.counter = 1;
+
         TodoList list = new TodoList();
 
         Task task_1 = new Task("Pet the dog");
@@ -28,6 +31,8 @@ class TodoListTest {
 
     @Test
     public void updateTaskTest(){
+        Task.counter = 1;
+
         TodoList list = new TodoList();
 
         Task task_1 = new Task("Pet the dog");
@@ -45,6 +50,8 @@ class TodoListTest {
 
     @Test
     public void updateStatusTest(){
+        Task.counter = 1;
+
         TodoList list = new TodoList();
 
         Task task_1 = new Task("Pet the dog");
@@ -69,6 +76,7 @@ class TodoListTest {
 
     @Test
     public void getDateAndTimeTest(){
+        Task.counter = 1;
         TodoList list = new TodoList();
 
         Task task_1 = new Task("Pet the dog");
@@ -87,4 +95,5 @@ class TodoListTest {
         Assertions.assertEquals(localDateTimeNow.getMonth(), taskTime.getMonth());
         Assertions.assertEquals(localDateTimeNow.getYear(), taskTime.getYear());
     }
+
 }
