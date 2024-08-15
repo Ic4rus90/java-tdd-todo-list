@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.Arrays;
 
 class TodoListTest {
     @Test
@@ -169,5 +170,37 @@ class TodoListTest {
         Assertions.assertEquals(fail, doesNotExist);
         Assertions.assertEquals(taskRemoved, removeSuccess);
         Assertions.assertEquals(fail, taskDoesNotExist);
+    }
+
+    @Test
+    public void SortingTest1(){
+        TodoList list = new TodoList();
+
+        list.setSorting(0);
+
+        Task task_1 = new Task("Approach the monkey in the yard");
+        Task task_2 = new Task("Run");
+        Task task_3 = new Task("Workout");
+        Task task_4 = new Task("Eat");
+
+        String [] sortedArray = {
+                "Approach the monkey in the yard",
+                "Eat",
+                "Run",
+                "Workout"
+        };
+
+        // Add tasks to list
+        list.addTask(task_1);
+        list.addTask(task_2);
+        list.addTask(task_3);
+        list.addTask(task_4);
+
+        list.setSorting(0);
+
+        for (int i = 0; i < list.listSize(); i++)
+        {
+            Assertions.assertEquals(list.taskList.get(i).getTaskName(), sortedArray[i]);
+        }
     }
 }
