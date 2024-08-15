@@ -176,8 +176,6 @@ class TodoListTest {
     public void SortingTest1(){
         TodoList list = new TodoList();
 
-        list.setSorting(0);
-
         Task task_1 = new Task("Approach the monkey in the yard");
         Task task_2 = new Task("Run");
         Task task_3 = new Task("Workout");
@@ -197,6 +195,36 @@ class TodoListTest {
         list.addTask(task_4);
 
         list.setSorting(0);
+
+        for (int i = 0; i < list.listSize(); i++)
+        {
+            Assertions.assertEquals(list.taskList.get(i).getTaskName(), sortedArray[i]);
+        }
+    }
+
+    @Test
+    public void SortingTest2(){
+        TodoList list = new TodoList();
+
+        Task task_1 = new Task("Approach the monkey in the yard");
+        Task task_2 = new Task("Run");
+        Task task_3 = new Task("Workout");
+        Task task_4 = new Task("Eat");
+
+        String [] sortedArray = {
+                "Workout",
+                "Run",
+                "Eat",
+                "Approach the monkey in the yard"
+        };
+
+        // Add tasks to list
+        list.addTask(task_1);
+        list.addTask(task_2);
+        list.addTask(task_3);
+        list.addTask(task_4);
+
+        list.setSorting(1);
 
         for (int i = 0; i < list.listSize(); i++)
         {
