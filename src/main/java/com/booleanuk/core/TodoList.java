@@ -24,9 +24,24 @@ public class TodoList {
 
 
     public void viewTasks(){
-        for (Task t : taskList) {
-            String taskName = t.getTaskName();
-            System.out.println(taskName);
+        switch(this.taskFilter){
+            case 0: {
+                for (Task t : taskList) {
+                    String taskName = t.getTaskName();
+                    System.out.println(taskName);
+                }
+                break;
+            }
+
+            case 2: {
+                for (Task t : taskList) {
+                    if (t.getIsCompleted()) {
+                        String taskName = t.getTaskName();
+                        System.out.println(taskName);
+                    }
+                }
+            }
+
         }
     }
 
