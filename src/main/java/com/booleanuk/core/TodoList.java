@@ -61,12 +61,13 @@ public class TodoList {
         this.taskFilter = filterNumber;
     }
 
-    /*
+
 
     public String searchTask(String task){
 
     }
 
+    /*
     public String removeTask(String task){
 
     }

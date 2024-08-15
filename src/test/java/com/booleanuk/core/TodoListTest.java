@@ -118,4 +118,28 @@ class TodoListTest {
         Assertions.assertFalse(out.toString().contains(task_2.getTaskName()));
         Assertions.assertFalse(out.toString().contains(task_3.getTaskName()));
     }
+
+    @Test
+    public void searchString(){
+        TodoList list = new TodoList();
+
+        String exists = list.searchTask("Walk the dog");
+        String doesNotExist = list.searchTask("Vacuum the racoon");
+
+        Task task_1 = new Task("Walk the dog");
+        Task task_2 = new Task("Run");
+
+        // Add tasks to list
+        list.addTask(task_1);
+        list.addTask(task_2);
+
+        String successString = "Task was found in your list";
+        String failString = "Task does not exist";
+
+        String stringExists = list.searchTask(exists);
+        String stringDoesNotExist = list.searchTask(doesNotExist);
+
+        Assertions.assertEquals(successString, stringExists);
+        Assertions.assertEquals(failString, stringDoesNotExist);
+    }
 }
