@@ -30,6 +30,11 @@ public class TodoList {
         }
     }
 
+    public void setTaskFilter(int filterNumber){
+        // 0 = all tasks, 1 = incomplete tasks, 2 = completed tasks.
+        this.taskFilter = filterNumber;
+    }
+
     /*
 
     public String searchTask(String task){

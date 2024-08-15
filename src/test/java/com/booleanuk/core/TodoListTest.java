@@ -46,4 +46,38 @@ class TodoListTest {
         Assertions.assertTrue(out2.toString().contains(taskName));
         Assertions.assertTrue(out2.toString().contains(taskName2));
     }
+
+    @Test
+    public void viewTasksTest2(){
+        /*
+        Test if only completed tests are returned, when this is set in preferences.
+         */
+        TodoList list = new TodoList();
+
+        list.setTaskFilter(2);
+
+        Task task_1 = new Task("Walk the dog");
+        Task task_2 = new Task("Run");
+        Task task_3 = new Task("Workout");
+        Task task_4 = new Task("Eat");
+
+        // Sets task 2 and 3 to completed
+        task_2.changeTaskStatus();
+        task_3.changeTaskStatus();
+
+        // Add tasks to list
+        list.addTask(task_1);
+        list.addTask(task_2);
+        list.addTask(task_3);
+        list.addTask(task_4);
+
+        // Get output stream
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+
+        list.viewTasks();
+
+        Assertions.assertTrue(out.toString().contains(task_1.getTaskName()));
+        Assertions.assertTrue(out.toString().contains(task_4.getTaskName()));
+    }
 }
