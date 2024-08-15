@@ -8,13 +8,21 @@ public class TodoList {
     private Integer sorting = 0;
 
     public boolean addTask(Task task) {
+        /*
+        try - catch blocks are hardly necessary, but I wanted to experiment with different solutions.
+         */
+        try {
+            taskList.add(task);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
-
     public int listSize(){
         return taskList.size();
     }
 
-
+/*
     public String viewTasks(){
 
     }
@@ -34,4 +42,5 @@ public class TodoList {
     private void setSorting(Integer sortingChoice){
 
     }
+ */
 }
