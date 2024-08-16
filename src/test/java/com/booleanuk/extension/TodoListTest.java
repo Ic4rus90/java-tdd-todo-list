@@ -94,6 +94,14 @@ class TodoListTest {
         Assertions.assertEquals(localDateTimeNow.getDayOfMonth(), taskTime.getDayOfMonth());
         Assertions.assertEquals(localDateTimeNow.getMonth(), taskTime.getMonth());
         Assertions.assertEquals(localDateTimeNow.getYear(), taskTime.getYear());
+
+        // Get output stream
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+
+        list.viewTasks();
+
+        Assertions.assertTrue(out.toString().contains(taskTime.toString()));
     }
 
 }
