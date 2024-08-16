@@ -64,12 +64,12 @@
 ### Task Class
 
 #### Variables
-| Variables             | Description                         |
-|-----------------------|-------------------------------------|
-| `Integer taskID`      | Contains the ID of the task.        | 
-| `String taskName`     | Contains the name of the task.      |
-| `Datetime taskDate`   | Contains time and date of the task. |
-| `Integer taskCounter` | Creates a unique ID for new tasks.  |
+| Variables                | Description                         |
+|--------------------------|-------------------------------------|
+| `Integer id`             | Contains the ID of the task.        | 
+| `String taskName`        | Contains the name of the task.      |
+| `LocalDatetime taskDate` | Contains time and date of the task. |
+| `Integer taskCounter`    | Creates a unique ID for new tasks.  | 
 
 ### TODO Class
 
@@ -83,7 +83,7 @@
 |-----------------------------------------------|----------------------------------------------------------------------------------|--------------|
 | `Task getTaskByID(Integer ID)`                | The user gets the task by entering the ID                                        | Returns task |
 | `Void updateTask(Integer ID, String newName)` | The user updates the name of the string by entering the ID                       | -            |
-| `Void changeTaskStatus(Integer ID)`           | The user changes the status of the task.                                         | -            |
+| `Void changeStatus(Integer ID)`               | The user changes the status of the task.                                         | -            |
 | `Void viewTasks()`                            | The user displays all the tasks in the list, including date and time of creation | -            |
 
 

@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 
 class TodoListTest {
     @Test
-    public void searchTaskTest(){
+    public void getTaskByIDTest(){
         Task.counter = 1;
 
         TodoList list = new TodoList();
@@ -24,7 +24,7 @@ class TodoListTest {
         list.addTask(task_1);
         list.addTask(task_2);
 
-        Task exists = list.searchTask(1);
+        Task exists = list.getTaskByID(1);
 
         Assertions.assertEquals(exists.getTaskName(), task_1.getTaskName());
     }

@@ -29,7 +29,7 @@ public class TodoList {
     }
 
 
-    public Task searchTask(Integer id){
+    public Task getTaskByID(Integer id){
         for (Task t : this.taskList) {
             if (Objects.equals(t.getID(), id)){
                 return t;
@@ -68,7 +68,8 @@ public class TodoList {
             case 0: {
                 for (com.booleanuk.extension.Task t : this.taskList) {
                     String taskName = t.getTaskName();
-                    System.out.println(taskName);
+                    LocalDateTime dt = t.getDateTime();
+                    System.out.println("Task: " + taskName + ". Created: " + dt);
                 }
                 break;
             }
@@ -77,7 +78,8 @@ public class TodoList {
                 for (com.booleanuk.extension.Task t : this.taskList) {
                     if (!t.getIsCompleted()) {
                         String taskName = t.getTaskName();
-                        System.out.println(taskName);
+                        LocalDateTime dt = t.getDateTime();
+                        System.out.println("Task: " + taskName + ". Created: " + dt);
                     }
                 }
                 break;
@@ -87,7 +89,8 @@ public class TodoList {
                 for (com.booleanuk.extension.Task t : this.taskList) {
                     if (t.getIsCompleted()) {
                         String taskName = t.getTaskName();
-                        System.out.println(taskName);
+                        LocalDateTime dt = t.getDateTime();
+                        System.out.println("Task: " + taskName + ". Created: " + dt);
                     }
                 }
                 break;
